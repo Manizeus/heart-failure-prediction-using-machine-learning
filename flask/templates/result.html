@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>report</title>
+  </head>
+  <body style="background-color: black;color:wheat">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand" href="/return"><code><B>Home</B></code></a>
+    </div>
+  </nav>
+  <br>
+    <div>
+      <div class="row align-items-center" style="height: 100vh;">
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+
+          <form class="form-example">
+            <h1>Prediction report</h1>
+            <p class="description">
+                this report shows patient heart condition based on Machine learning model
+            </p>
+
+            <div class="form-group">
+              <label for="username">patient name:</label>
+
+              <input
+                type="text"
+                class="form-control username"
+                id="username"
+                value="{{ Name }}"
+                placeholder="Username..."
+                name="username"
+                readonly
+              />
+            </div>
+            <div class="form-group">
+
+              <label for="password">report:</label>
+              <input
+                type="textfield"
+                class="form-control password"
+                id="password"
+                value="{{ Result }}"
+                name="password"
+                style="height: 50px;"
+                readonly
+              />
+               <br>
+              <table class="table table-striped table-dark" >
+                <thead>
+                  <th>test report</th>
+                  <th>ratio</th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Age</td>
+                  <td>{{Age}}</td>
+                </tr>
+                <tr>
+                  <td>Anaemia</td>
+                  <td>{{Anaemia}}</td?>
+                </tr>
+                <tr>
+                  <td>Creatinine</td>
+                  <td>{{Creatinine}}</td>
+                </tr>
+                <tr>
+                  <td>Diabetes</td>
+                  <td>{{Diabetes}}</td?>
+                </tr>
+                <tr>
+                  <td>Ejection_fraction</td>
+                  <td>{{EF}}</td>
+                </tr>
+                <tr>
+                  <td>High_blood_pressure</td>
+                  <td>{{HBP}}</td?>
+                </tr>
+                <tr>
+                  <td>Platelets</td>
+                  <td>{{pla}}</td>
+                </tr>
+                <tr>
+                  <td>serum_creatinine</td>
+                  <td>{{SC}}</td?>
+                </tr>
+                <tr>
+                  <td>serum_sodium</td>
+                  <td>{{SS}}</td>
+                </tr>
+                <tr>
+                  <td>Male_or_female</td>
+                  <td>{{MF}}</td?>
+                </tr>
+                <tr>
+                  <td>smoking</td>
+                  <td>{{smoke}}</td>
+                </tr>
+                <tr>
+                  <td>Time</td>
+                  <td>{{Time}}</td?>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </form>
+          <!-- Form end -->
+		  <button type="button" class="btn btn-primary btn-customized mt-4" onclick="window.print()">
+              print the result
+            </button>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

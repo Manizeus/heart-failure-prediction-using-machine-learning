@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="static\bootstrap-5.2.3-dist\css\bootstrap.min.css">
+</head>
+<style>
+
+@media only screen and (max-width: 1366px) {
+    form {width:60%; margin:auto;}
+
+}
+@media only screen and (max-width: 360px) {
+    form {width:100%; margin:auto;}
+
+}
+@media only screen and (max-width: 480px) {
+    form {width:100%; margin:auto;}
+
+}
+
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('static/hearti.jpg')no-repeat center center scroll;
+  }
+
+  header video {
+    display: none;
+  }
+}
+
+
+form {
+
+background: rgba(255, 255, 255, 0);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.8px);
+-webkit-backdrop-filter: blur(5.8px);
+border: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.form-outline input{
+  width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+#main{
+  background-image: url('static/oo.jpg');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: 100% 100%;
+
+}
+
+.navbar li{
+     display:inline;
+     margin-left:13px;
+     text-decoration:none;
+}
+
+
+
+</style>
+<body onload="fun()" style="background-color: black;color: aliceblue;" >
+
+  <nav class="navbar navbar-dark bg-black">
+     <ul>
+         <li><a href="#" style="text-decoration:none; color:white;font-size:20px;"><code>Home</code></a></li>
+         <li><a href="" style="text-decoration:none; color:white; font-size:20px;"><code>about</code></a></li>
+         <li><a href="Mk.apk" style="text-decoration:none; color:white; font-size:20px;" download><code>Android</code></a></li>
+         <li><a href="" style="text-decoration:none; color:white; font-size:20px;"><code>Sample</code></a></li>
+
+
+     </ul>
+  </nav>
+
+
+    <header>
+
+      <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+      <div class="overlay"> </div>
+      <!-- The HTML5 video element that will create the background video on the header -->
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:100%;">
+        <source src={{ url_for('static',filename="ll.mp4") }} type="video/mp4">
+      </video>
+
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+           <h1 class="display-4"><code style="color: #fff;">Heart failure prediction</code></h1>
+
+            <p class="lead mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<div id="main" class="container-fluid">
+<main>
+<div id="log" style="margin: auto; height: auto;padding: 20px;margin-top: 20px;border-radius: 3px;">
+  <form action="/result" method="post" style="padding: 20px;">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-6">
+      <div class="col">
+        <div class="form-outline">
+          <input class="container" type="text" id="form6Example1" class="form-control" name="name" required/>
+          <label class="form-label" for="form6Example1">Name</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text"  min="10" max="10" id="form6Example2" class="form-control" name="phoneNumber" required/>
+          <label class="form-label" for="form6Example2">phone number</label>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h5 style="text-align: center;">Enter your report details</h5>
+    <br>
+    <div class="row mb-2">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="Age" value="75" required />
+          <label class="form-label" for="form6Example1">Age
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" name="Anaemia" value="0" required/>
+          <label class="form-label" for="form6Example2">Anaemia</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="creatinine" value="582" required/>
+          <label class="form-label" for="form6Example1">creatinine</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" name="diabetes" value="0" required/>
+          <label class="form-label" for="form6Example2">diabetes</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="ejectionFraction" value="20" required/>
+          <label class="form-label" for="form6Example1">ejection_fraction</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" name="highBloodPressure" value="1" required/>
+          <label class="form-label" for="form6Example2">high_blood_pressure</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="platelets"  value="265000" required/>
+          <label class="form-label" for="form6Example1">platelets</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" name="serumCreatinine" value="1.9" required />
+          <label class="form-label" for="form6Example2">serum_creatinine</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="serumSodium" value="130" required/>
+          <label class="form-label" for="form6Example1">serum_sodium
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" name="MorF" value="1" required />
+          <label class="form-label" for="form6Example2">M/F</label>
+        </div>
+      </div>
+    </div>
+
+	<div class="row mb-2">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="smoking" value="0" required/>
+          <label class="form-label" for="form6Example1">smoking
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" name="time" value="4" required/>
+          <label class="form-label" for="form6Example2">time</label>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Submit button -->
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary btn-block mb-4 ">check report</button>
+    </div>
+  </form>
+</div>
+</main>
+</div>
+<footer>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="mailto:mkofficial399@gmail.com">MK</a>
+  </div>
+</footer>
+
+<script src="static\bootstrap-5.2.3-dist\js\bootstrap.min.js"></script>
+
+<script src="static\bootstrap-5.2.3-dist\js\jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>
